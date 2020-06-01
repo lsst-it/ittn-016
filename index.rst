@@ -79,7 +79,6 @@ The specific devices models are the following:
 .. figure:: /_static/wlc.JPG
     :name: Cisco WLC 5520
     :width: 550 px
-    :scale: 50 %
 
 - **Cisco Access Point 3802i**: Lightweight AP with support for Wi-Fi 4 and 5, N-Base-T, and dual Wi-Fi 5 internal omnidirectional antennas. To be used indoors (e.g. office areas, industrial but enclosed areas, etc..).
 
@@ -93,7 +92,6 @@ The specific devices models are the following:
 .. figure:: /_static/3802e.JPG
     :name: AP 3802e
     :width: 550 px
-    :scale: 50 %
 
 - **Cisco Access Point 1562i**: Lightweight ruggedized AP with support for Wi-Fi 4 and 5, 1000-Base-T, and internal semi-omnidirectional antennas. To be used outdoors, it includes an SFP+ port for fiber connectivity.
 
