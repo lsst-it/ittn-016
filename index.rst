@@ -7,8 +7,11 @@
 .. note::
 
    **This technote is a work in progress.**
-
-
+   
+.. toctree::
+   :caption: Table of Contents
+   :maxdepth: 3
+   
 Introduction
 ============
 
