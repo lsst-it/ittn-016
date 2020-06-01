@@ -1,4 +1,4 @@
-:tocdepth: 1
+:tocdepth: 3
 
 .. Please do not modify tocdepth; will be fixed when a new Sphinx theme is shipped.
 
@@ -7,10 +7,6 @@
 .. note::
 
    **This technote is a work in progress.**
-   
-.. toctree::
-   :caption: Table of Contents
-   :maxdepth: 3
    
 Introduction
 ============
