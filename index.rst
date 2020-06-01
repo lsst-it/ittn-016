@@ -70,7 +70,6 @@ On a high-level, the Cisco WLC solution provides central management for all the 
 .. figure:: /_static/flexconnect.jpg
     :name: APs in Flexconnect mode
     :width: 550 px
-    :scale: 50 %
 
 The specific devices models are the following:
 
@@ -85,7 +84,6 @@ The specific devices models are the following:
 .. figure:: /_static/3802i.JPG
     :name: AP 3802i
     :width: 550 px
-    :scale: 50 %
 
 - **Cisco Access Point 3802e**: Lightweight AP with support for Wi-Fi 4 and 5, N-Base-T, and dual Wi-Fi 5 external omnidirectional antennas. To be used indoors, in areas with increased coverage requirements (e.g. industrial but enclosed areas).
 
@@ -98,14 +96,12 @@ The specific devices models are the following:
 .. figure:: /_static/1562i.JPG
     :name: AP 1562i
     :width: 550 px
-    :scale: 50 %
 
 - **Cisco Access Point 3702i**:* Lightweight AP with support for Wi-Fi 4 and 5 (only wave 1), 1000-Base-T, and internal omnidirectional antennas. To be used indoors (e.g. office areas, industrial but enclosed areas, etc..).
 
 .. figure:: /_static/3702i.JPG
     :name: AP 3702i
     :width: 550 px
-    :scale: 50 %
     
 *This model was not part of the original Cisco offering and it was chosen in 2019 as an additional cost-effective alternative for less demanding areas such as the LSST summit Villa.
 
@@ -116,15 +112,13 @@ Logical Design
 --------------
 .. figure:: /_static/WiFi-phydiag-HLD-Logical.png
     :name: Wi-Fi Infrastructure Logical Design
-    :width: 550 px
-    :scale: 50 %
-    
+    :width: 800 px
+
 Physical Design
 ---------------
 .. figure:: /_static/WiFi-phydiag-HLD-Physical.png
     :name: Wi-Fi Infrastructure Logical Design
-    :width: 550 px
-    :scale: 50 %
+    :width: 800 px
     
 Scalability
 -----------
@@ -160,13 +154,13 @@ Given the requirements, the chosen solution and the design considerations, a com
 
 - **Redundant controllers with APs in flex connect mode:** Each AP registers with the controller at its local site. Switching is done locally and control plane protocols are managed by the controller. In case of failure, after the keepalive threshold is breached, the AP registers with the controller at the other site (i.e. mounts a CAPWAP tunnel with the controller). During the failure, already authenticated users keep connectivity until they are dissociated from the AP due to a timeout of when trying to roam. For WPA2 PSK authentication can still happen without the controller, only WPA2 Enterprise SSIDs would lose the ability to authenticate.
 
-  - Cost factors: Doubles the license need per controller, each site should be able to support the full AP load of each other in case of a failure, but only 2 controllers are needed and no dependency on L2 or physically adjacent connections is needed.
-  - Functional factors: Due to local switching happening at each AP, mission-critical devices remain connected while the APs rejoin the new controller. Connectivity is never lost for authenticated users. The controllers at each site must have a baseline common configuration for rejoining to work (e**.g. if an SSID exists at the summit, it also has to exist at the base, even if not used in that site).
-  
+  - **Cost factors:** Doubles the license need per controller, each site should be able to support the full AP load of each other in case of a failure, but only 2 controllers are needed and no dependency on L2 or physically adjacent connections is needed.
+  - **Functional factors:** Due to local switching happening at each AP, mission-critical devices remain connected while the APs rejoin the new controller. Connectivity is never lost for authenticated users. The controllers at each site must have a baseline common configuration for rejoining to work (e.g. if an SSID exists at the summit, it also has to exist at the base, even if not used in that site).
+
 - **HA controllers with APs in flex connect mode:** Same as the first option, the APs register with its local controller but in case of failure, the control plane is handed over to the standby controller, physically located at the same site. Authentication is never lost, the CAPWAP tunnels are maintained but this only considers a site-specific failure. If the redundant port cable is disconnected between the controllers or in case of a dual failure scenario, the APs would still need to register with the controller at the other side, in which case the local switching maintains connectivity for already authenticated users while the AP rejoins.
 
-  - Cost factors: If HA is only needed per-site, a 1:1 ratio of AP to licenses is required, but if we want to cover dual failure scenarios, still doubling the AP licenses to support the AP load of the other site is necessary, on top of doubling the number of controllers due to the HA requirements (2 controllers per site).
-  - Functional factors: Local switching is common to a redundant and HA approach, but in HA mode the control plane is not lost for site-specific failures.
+  - **Cost factors:** If HA is only needed per-site, a 1:1 ratio of AP to licenses is required, but if we want to cover dual failure scenarios, still doubling the AP licenses to support the AP load of the other site is necessary, on top of doubling the number of controllers due to the HA requirements (2 controllers per site).
+  - **Functional factors:** Local switching is common to a redundant and HA approach, but in HA mode the control plane is not lost for site-specific failures.
   
 Considering the points mentioned above, implementing HA for the best case scenario double the cost of hardware and licensing, while adding little benefit to site-specific failures, which can be mitigated with the APs in flex connect mode with local switching for mission-critical devices. Given the use-case, the redundant controller approach can scale to an HA approach easily in the future.
 
