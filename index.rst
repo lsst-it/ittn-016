@@ -153,7 +153,7 @@ Design Considerations
 Redundancy and High-Availability
 --------------------------------
 
-Given the requirements, the chosen solution and the design considerations, a combination of redundant controllers, one per-site, plus the use of APs in flex connect mode with local switching is the best approach for our use-case. High-availability can be implemented at each site with a standby controller (directly connected via the redundancy port) that takes over the control plane in case a failure of the main controller, but it not effective across sites due to its physical dependency on the cable connecting the controllers, therefore, implementing high-availability at each site doubles the amount of hardware needed (2 controllers per-site) while providing marginal benefit in terms of service continuity. A summary of both approach as follows:
+Given the requirements, the chosen solution and the design considerations, a combination of redundant controllers, one per-site, plus the use of APs in flex connect mode with local switching is the best approach for our use-case. High-availability can be implemented at each site with a standby controller (directly connected via the redundancy port) that takes over the control plane in case a failure of the main controller, but it is not effective across sites due to its physical dependency on the cable connecting the controllers, therefore, implementing high-availability at each site doubles the amount of hardware needed (2 controllers per-site) while providing marginal benefit in terms of service continuity. A summary of both approach as follows:
 
 - **Redundant controllers with APs in flex connect mode:** Each AP registers with the controller at its local site. Switching is done locally and control plane protocols are managed by the controller. In case of failure, after the keepalive threshold is breached, the AP registers with the controller at the other site (i.e. mounts a CAPWAP tunnel with the controller). During the failure, already authenticated users keep connectivity until they are dissociated from the AP due to a timeout of when trying to roam. For WPA2 PSK authentication can still happen without the controller, only WPA2 Enterprise SSIDs would lose the ability to authenticate.
 
@@ -182,7 +182,7 @@ Wireless access should be segmented per type of user: corporate users (including
 Monitoring
 ----------
 
-The monitoring is done initially by the controller itself with the AireOS provided features for notifications, warnings, and SNMP-traps. An SNMP service can also query the controllers using the Cisco-provided MIBs for basic hardware parameters such as CPU, RAM and HDD load, plus additional parameters such as per-AP client load, coverage holes, interference, etc... depending on the level of granularity needed by the System Administrator in conjunction with the Network Engineer.
+The monitoring is done initially by the controller itself with the AireOS provided features for notifications, warnings, and SNMP-traps. An SNMP service can also query the controllers using the Cisco-provided MIBs for basic hardware parameters such as CPU, RAM, and HDD load, plus additional parameters such as per-AP client load, coverage holes, interference, etc... depending on the level of granularity needed by the System Administrator in conjunction with the Network Engineer.
 
 Logging is done via Syslog at debugging level to the local Syslog collector of the site and alerts may be configured for specific messages such as AP downs, hardware issues, etc... as a backup of the SNMP monitoring.
 
