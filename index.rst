@@ -69,8 +69,7 @@ On a high-level, the Cisco WLC solution provides central management for all the 
 
 .. figure:: /_static/flexconnect.jpg
     :name: APs in Flexconnect mode
-    :width: 550 px
-    :class: with-border
+    :width: 400 px
 
 The specific devices models are the following:
 
@@ -78,33 +77,31 @@ The specific devices models are the following:
 
 .. figure:: /_static/wlc.JPG
     :name: Cisco WLC 5520
-    :width: 550 px
-    :class: with-border with-shadow
+    :width: 400 px
 
 - **Cisco Access Point 3802i**: Lightweight AP with support for Wi-Fi 4 and 5, N-Base-T, and dual Wi-Fi 5 internal omnidirectional antennas. To be used indoors (e.g. office areas, industrial but enclosed areas, etc..).
 
 .. figure:: /_static/3802i.JPG
     :name: AP 3802i
-    :width: 550 px
+    :width: 400 px
 
 - **Cisco Access Point 3802e**: Lightweight AP with support for Wi-Fi 4 and 5, N-Base-T, and dual Wi-Fi 5 external omnidirectional antennas. To be used indoors, in areas with increased coverage requirements (e.g. industrial but enclosed areas).
 
 .. figure:: /_static/3802e.JPG
     :name: AP 3802e
-    :width: 550 px
-    :class: with-border 
+    :width: 400 px
 
 - **Cisco Access Point 1562i**: Lightweight ruggedized AP with support for Wi-Fi 4 and 5, 1000-Base-T, and internal semi-omnidirectional antennas. To be used outdoors, it includes an SFP+ port for fiber connectivity.
 
 .. figure:: /_static/1562i.JPG
     :name: AP 1562i
-    :width: 550 px
+    :width: 400 px
 
 - **Cisco Access Point 3702i**:* Lightweight AP with support for Wi-Fi 4 and 5 (only wave 1), 1000-Base-T, and internal omnidirectional antennas. To be used indoors (e.g. office areas, industrial but enclosed areas, etc..).
 
 .. figure:: /_static/3702i.JPG
     :name: AP 3702i
-    :width: 550 px
+    :width: 400 px
     
 *This model was not part of the original Cisco offering and it was chosen in 2019 as an additional cost-effective alternative for less demanding areas such as the Rubin Observatory summit Villa.
 
