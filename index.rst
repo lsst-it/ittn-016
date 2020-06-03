@@ -197,6 +197,8 @@ Several types of management are available for the chose solution but the followi
 - **IPMI/BMC access** is provided by the onboard Cisco CIMC hardware, also placed in a different and more protected network than in-band management. It may or not be in the same as the OOB management segment.
 - The APs must be pushed with a specific local account for **direct SSH access** if needed. It's advisable that this account is local to the controller and not a domain account, to avoid lock-down scenarios when multiple network failures occur (e.g. the Radius servers not being reachable over the network).
 
+.. include:: acronyms.rst 
+
 .. .. rubric:: References
 
 .. Make in-text citations with: :cite:`bibkey`.
