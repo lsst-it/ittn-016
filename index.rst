@@ -69,7 +69,7 @@ On a high-level, the Cisco WLC solution provides central management for all the 
 
 .. figure:: /_static/flexconnect.jpg
     :name: APs in Flexconnect mode
-    :width: 400 px
+    :width: 550 px
 
 The specific devices models are the following:
 
