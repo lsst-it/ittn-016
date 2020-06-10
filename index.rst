@@ -3,10 +3,6 @@
 .. Please do not modify tocdepth; will be fixed when a new Sphinx theme is shipped.
 
 .. sectnum::
-
-.. note::
-
-   **This technote is a work in progress.**
    
 Introduction
 ============
