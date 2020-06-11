@@ -106,7 +106,7 @@ Proposed Wireless Architecture
 
 Logical Design
 --------------
-.. figure:: /_static/WiFi-phydiag-HLD-Logical.png
+.. figure:: /_static/WiFi-phydiag-HLD-Logical.jpg
     :name: Wi-Fi Infrastructure Logical Design
     :width: 800 px
 
