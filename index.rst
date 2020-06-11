@@ -30,8 +30,8 @@ Assumptions and Caveats
 
 Related Documents
 -----------------
-- LSE-78 LSST Observatory Network Design
-- LSE-309 Summit to Base ITC Design
+- `LSE-78 LSST Observatory Network Design <https://ls.st/LSE-78>`_
+- `LSE-309 Summit to Base ITC Design <https://ls.st/LSE-309>`_
 
 Technical Solution Overview
 ===========================
@@ -59,7 +59,7 @@ As the Rubin Observatory telescope building and the new base facilities are read
 Chosen Solution
 ---------------
 
-The decision rationale was a technical analysis of the project requirements by several vendors and distributors held in the 2015/2016 timeframe by the Tiger Team, out of which Cisco Systems was the chosen vendor for all the LAN network infrastructure, including Wi-Fi, from which its Wireless Lan Controller (WLC) and Lightweight Access Points (AP) ecosystem was the specific technical solution chosen for the project.
+The decision rationale was a technical analysis of the project requirements by several vendors and distributors held in the 2015/2016 timeframe by the Tiger Team, out of which `Cisco Systems was the chosen vendor for most of the LAN, Datacenter, Wi-Fi and VoIP infrastructure <https://confluence.lsstcorp.org/download/attachments/41790141/Cisco%20ACI%20justification%20v2.docx?api=v2?>`_, from which its Wireless Lan Controller (WLC) and Lightweight Access Points (AP) ecosystem was the specific technical solution chosen for the project.
 
 On a high-level, the Cisco WLC solution provides central management for all the APs in the network, including wireless settings such as channels, power budget, interference threshold, user authentication, etc... This is implemented by loading a lightweight version of the AireOS software on the APs, which connects back to the WLC using the Control and Provisioning for Wireless Access Points (CAPWAP) protocol. There are different operating modes for the chosen solution in regards to how the APs forward data and control traffic, both with pros and cons; this document will expand on this matter in section 3.5.
 
